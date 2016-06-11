@@ -1,8 +1,10 @@
 # depslib dependency file v1.0
-1464610833 source:c:\users\jack jiang\desktop\c basics\helloworld.c
+1465028347 source:c:\users\jack jiang\desktop\c basics\helloworld.c
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
+	<string.h>
+	<ctype.h>
 
 1464441035 source:c:\users\jack jiang\desktop\c basics\textbook\exercise 2.1.c
 

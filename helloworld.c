@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+#include <ctype.h>
 void ex_3_3(void){
     int a, b, c, d;
     double root;
@@ -183,10 +184,87 @@ void ex_4_3(void){
     printf("%d", fib(input));
 }
 
+/* Grapher */
+void ex_4_5(void){
+    int input;
+    int temp;
+
+
+    printf("Enter numbers seperated by spaces: ");
+    while (scanf("%d",&input)==1){
+        printf("%-3d|", input);
+        for (temp=1;temp<=input;temp++){
+            printf("*");
+        }
+        printf("\n");
+
+    }
+}
+
+/* ascii character set */
+void ex_4_4(void){
+    int loop;
+    int mainloop;
+    int temp;
+    printf("      ");
+    for (loop=0;loop!=8;loop++){
+        printf(" +%d",loop);
+    }
+    printf("\n    +-------------------------\n");
+    for (mainloop = 32;mainloop<=120;mainloop+=8){
+        printf("%-3d |",mainloop);
+        for (temp=0;temp<=7;temp++){
+            printf("%3c",mainloop+temp);
+        }
+        printf("\n");
+
+    }
+}
+
+void ex_4_6(void){
+    int line = 0 , chars = 0,proc;
+    printf("Enter text:\n");
+    while((proc = getchar()) != EOF){
+        if (proc == '\n'){
+            line ++;
+        }
+        else{chars ++;}
+    }
+    printf("Lines:&\%-7d", line);
+    printf("Chars:&\%-7d", chars);
+
+}
+
+/* max_int picker */
+int max_2_ints(int one,int two){
+    if (one > two){
+        return one;
+    }
+    else{
+        return two;
+    }
+
+}
+
+/* max_4_ints */
+int max_4_ints(int one,int two, int three,int four){
+    int largest = one;
+    largest = max_2_ints(largest, two);
+    largest = max_2_ints(largest, three);
+    largest = max_2_ints(largest, four);
+    return largest;
+}
+
+int int_pow(int num,int exponent){
+    return num**exponent;
+}
+
+
 int main(void){
-    int rand;
-    ex_4_3();
-    scanf("%s", &rand);
+    int rand,rand1,rand2,rand3;
+    scanf("%d%d%d%d",&rand,&rand1,&rand2,&rand3);
+    printf("%d",max_4_ints(rand,rand1,rand2,rand3));
+    system("pause");
     return 0;
 
 }
