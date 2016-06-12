@@ -259,6 +259,48 @@ int int_pow(int num,int exponent){
     return num**exponent;
 }
 
+int isperfect(int num){
+	int num1;
+	int total=0;
+	if (num == 1){
+		return 0;
+	}
+	if (num%2==1){
+		num1 = (num+1)/2;
+	}
+	else{
+		num1 = num/2;
+	}
+
+	for (int i = 1; i <= num1; ++i){
+		if (num%i==0){
+			total += i;
+		}
+	}
+	if (total == num){
+		return 1;
+	}
+	else {
+		return 0;
+	}
+
+
+}
+
+int next_perfect(int num){
+	while (1){
+		num++;
+		if (isperfect(num)){
+			return num;
+		}
+	}
+}
+
+
+int amiacble(int one,int two){
+
+}
+
 
 int main(void){
     int rand,rand1,rand2,rand3;
